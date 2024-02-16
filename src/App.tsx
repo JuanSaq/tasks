@@ -20,7 +20,13 @@ function App(): JSX.Element {
                             <li>Life flourished...</li>
                             <li>So a Baja Blast Pie could be made</li>
                         </ul>
-                        <div style={(width:"200px", height:"300px", backgroundColor:"red")}></div>
+                        <div
+                            style={{
+                                width: "200px",
+                                height: "300px",
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                     </Col>
                     <Col>
                         <img
@@ -28,10 +34,17 @@ function App(): JSX.Element {
                             alt="The upcoming Baja Blast Pie from Taco Bell"
                             width="500"
                         />
+                        <div
+                            style={{
+                                width: "200px",
+                                height: "300px",
+                                backgroundColor: "red"
+                            }}
+                        ></div>
                     </Col>
                 </Row>
-                <Button onClick={() => console.log("Log Hello World")}>
-                    Hello World!
+                <Button onClick={() => console.log("Hello World!")}>
+                    Log Hello World
                 </Button>
             </Container>
         </div>
