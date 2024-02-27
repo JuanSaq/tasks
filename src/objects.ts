@@ -94,7 +94,7 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return { ...question, name: newName };
+    return { ...question, name: newName, options: [...question.options] };
 }
 
 /**
@@ -103,7 +103,11 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return { ...question, published: !question.published };
+    return {
+        ...question,
+        published: !question.published,
+        options: [...question.options]
+    };
 }
 
 /**
