@@ -170,7 +170,10 @@ export function renameQuestionById(
     newName: string
 ): Question[] {
     const copyQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     const question = findQuestion(copyQuestions, targetId);
     if (question) question.name = newName;
@@ -190,7 +193,10 @@ export function changeQuestionTypeById(
     newQuestionType: QuestionType
 ): Question[] {
     const copyQuestions = questions.map(
-        (question: Question): Question => ({ ...question })
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
     );
     const question = findQuestion(copyQuestions, targetId);
     if (question) {
@@ -218,7 +224,19 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options: [...question.options]
+        })
+    );
+    const question = findQuestion(copyQuestions, targetId);
+    if (question) {
+        if (targetOptionIndex !== -1) {
+            question.options.splice(targetOptionIndex, 1, newOption);
+        } else question.options = [...question.options, newOption];
+    }
+    return copyQuestions;
 }
 
 /***
