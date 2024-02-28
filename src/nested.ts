@@ -169,7 +169,12 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    const question = findQuestion(copyQuestions, targetId);
+    if (question) question.name = newName;
+    return copyQuestions;
 }
 
 /***
@@ -184,7 +189,17 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const copyQuestions = questions.map(
+        (question: Question): Question => ({ ...question })
+    );
+    const question = findQuestion(copyQuestions, targetId);
+    if (question) {
+        if (newQuestionType === "short_answer_question") {
+            question.type = newQuestionType;
+            question.options = [];
+        } else question.type = newQuestionType;
+    }
+    return copyQuestions;
 }
 
 /**
