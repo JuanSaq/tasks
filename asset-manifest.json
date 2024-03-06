@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/tasks/static/css/main.b9b14db6.css",
-    "main.js": "/tasks/static/js/main.06a06577.js",
+    "main.js": "/tasks/static/js/main.3688e71b.js",
     "static/js/787.4ef7427d.chunk.js": "/tasks/static/js/787.4ef7427d.chunk.js",
-    "static/media/Baja-Blast-Pie.jpg": "/tasks/static/media/Baja-Blast-Pie.a48c4cc9eccf7ecaecca.jpg",
     "index.html": "/tasks/index.html",
     "main.b9b14db6.css.map": "/tasks/static/css/main.b9b14db6.css.map",
-    "main.06a06577.js.map": "/tasks/static/js/main.06a06577.js.map",
+    "main.3688e71b.js.map": "/tasks/static/js/main.3688e71b.js.map",
     "787.4ef7427d.chunk.js.map": "/tasks/static/js/787.4ef7427d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9b14db6.css",
-    "static/js/main.06a06577.js"
+    "static/js/main.3688e71b.js"
   ]
 }
