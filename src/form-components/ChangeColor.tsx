@@ -31,27 +31,25 @@ export function ChangeColor(): JSX.Element {
                             name={"response"}
                             key={acolor}
                             value={acolor}
-                            label={acolor}
+                            label={
+                                <span style={{ backgroundColor: acolor }}>
+                                    {acolor}
+                                </span>
+                            }
                             onChange={(e) => setColor(e.target.value)}
                             checked={color === acolor}
-                            style={{ backgroundColor: acolor }}
                         />
                     ))}
                 </Form.Group>
             </div>
             <div>
-                You have chosen
-                <div
-                    style={{
-                        backgroundColor: color,
-                        width: "40px",
-                        marginLeft: "500px",
-                        verticalAlign: "bottom"
-                    }}
+                You have chosen{" "}
+                <span
+                    style={{ backgroundColor: color }}
                     data-testid="colored-box"
                 >
                     {color}
-                </div>
+                </span>
             </div>
         </div>
     );
