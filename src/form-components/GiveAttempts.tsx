@@ -3,16 +3,16 @@ import { Button, Form } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
     const [attempts, setAttempts] = useState<number>(3);
-    const [requests, setRequests] = useState<number>(0);
+    const [requests, setRequests] = useState<string>("");
 
     function updateAttempts() {
         if (requests) {
-            setAttempts(attempts + requests);
-            setRequests(0);
+            setAttempts(attempts + parseInt(requests));
+            setRequests("");
         }
     }
     function updateRequest(event: React.ChangeEvent<HTMLInputElement>) {
-        setRequests(parseInt(event.target.value));
+        setRequests(event.target.value);
     }
     return (
         <div>
